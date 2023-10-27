@@ -1,0 +1,31 @@
+<section class="p-5 mx-auto mt-6 bg-gray-300 w-80 rounded-xl">
+  <h1>編輯候選人資料</h1>
+
+  <%= form_with(model: @candidate, data: {turbo: false}) do |f| %>
+
+  <div class="flex flex-col">
+    <%= f.label :name, "姓名"%>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="flex flex-col">
+    <%= f.label :age, "年齡" %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="flex flex-col">
+    <%= f.label :party, "政黨" %>
+    <%= f.text_field :party %>
+  </div>
+
+  <div class="flex flex-col">
+     <%= f.label :politics, "政見" %>
+     <%= f.text_area :politics %>
+  </div>
+
+  <%= f.submit "編輯完成送出", class:"cursor-pointer" %>
+
+<% end  %>
+
+</section>
+
