@@ -1,0 +1,38 @@
+
+
+<section>
+
+ <%= form_with(candidate) do |f| %>
+
+    <div>
+    <%= f.label :name, "姓名" %>
+    <%= f.text_field :name %>
+    </div>
+
+  <div>
+    <%= f.label :age, "年齡" %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <%= f.label :party, "政黨" %>
+    <%= f.text_field :party %>
+  </div>
+
+  <div>
+    <%= f.label :politics, "政見" %>
+    <%= f.text_area :politics %>
+  </div>
+
+  <%= f.sumbit %>
+<%= end %>
+
+
+
+
+
+
+
+
+
+</section>
