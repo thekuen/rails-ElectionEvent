@@ -1,15 +1,16 @@
 
-<div class="w-8/12 p-6 mx-auto mt-10 bg-emerald-400 rounded-xl">
-  <h1 class="mb-3 text-xl font-black">候選人列表</h1>
-  <%= link_to "新增候選人", new_candidate_path, class:"hover:text-gray-600" %>
+<div class="w-9/12 p-6 mx-auto mt-10 bg-emerald-400 rounded-xl">
+  <h1 class="text-xl font-black">候選人列表</h1>
+  <%= link_to "新增候選人", new_candidate_path, class:"mt-28 hover:text-gray-600 " %>
 
-  <table class="my-6">
+  <table class="my-6 bg-amber-50">
     <thead>
       <tr>
         <td class="w-40">候選人姓名</td>
         <td class="w-28">政黨</td>
-        <td class="w-28">證件</td>
+        <td class="w-66">政見</td>
         <td class="w-28">得票數</td>
+        <td>處理</td>
       </tr>
     </thead>
     <tbody>
@@ -19,15 +20,12 @@
         <td><%= candidate.party %></td>
         <td><%= candidate.politics %></td>
         <td><%= candidate.votes  %></td>
-      </tr>
-
-      <tr>
         <td><%= link_to "編輯", edit_candidate_path(candidate.id) %></td>
+        <td><%= link_to "刪除", candidate_path(candidate.id), data: { turbo_method: "delete", turbo_confirm: "確認刪除"} %></td>
+
       </tr>
 
-      <tr>
-        <td><%= link_to "刪除", candidate_path(candidate.id), data: { turbo_method: "delete", turbo_confirm: "確認刪除"} %></td>
-      </tr>
+
       <% end %>
     </tbody>
   </table>

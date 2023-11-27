@@ -1,4 +1,4 @@
-<section class="p-5 mx-auto mt-6 bg-gray-300 w-80 rounded-xl">
+<section class="p-5 mx-auto mt-6 bg-gray-300 w-9/12 rounded-xl">
   <h1>編輯候選人資料</h1>
 
   <%= form_with(model: @candidate, data: {turbo: false}) do |f| %>
@@ -26,6 +26,9 @@
   <%= f.submit "編輯完成送出", class:"cursor-pointer" %>
 
 <% end  %>
+<%= link_to '回候選人列表', candidates_path %>
 
 </section>
+
+
 
