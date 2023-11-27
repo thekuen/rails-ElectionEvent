@@ -1,38 +1,19 @@
+<div class="w-80 flex flex-col" >
+  <%= f.label :name, "姓名"%>
+  <%= f.text_field :name %>
+</div>
 
+<div class="w-80 flex flex-col">
+  <%= f.label :age, "年齡" %>
+  <%= f.text_field :age %>
+</div>
 
-<section>
+<div class="w-80 flex flex-col">
+  <%= f.label :party, "政黨" %>
+  <%= f.text_field :party %>
+</div>
 
- <%= form_with(candidate) do |f| %>
-
-    <div>
-    <%= f.label :name, "姓名" %>
-    <%= f.text_field :name %>
-    </div>
-
-  <div>
-    <%= f.label :age, "年齡" %>
-    <%= f.text_field :age %>
-  </div>
-
-  <div>
-    <%= f.label :party, "政黨" %>
-    <%= f.text_field :party %>
-  </div>
-
-  <div>
-    <%= f.label :politics, "政見" %>
-    <%= f.text_area :politics %>
-  </div>
-
-  <%= f.sumbit %>
-<%= end %>
-
-
-
-
-
-
-
-
-
-</section>
+<div class="w-80 flex flex-col">
+  <%= f.label :politics, "政見"  %>
+  <%= f.text_area :politics, class:"h-3/6" %>
+</div>
