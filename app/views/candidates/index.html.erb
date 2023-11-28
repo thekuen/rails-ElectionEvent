@@ -5,6 +5,7 @@
   <table class="my-6 bg-amber-50">
     <thead>
       <tr>
+        <td class="w-40">投票</td>
         <td class="w-40">候選人姓名</td>
         <td class="w-28">政黨</td>
         <td class="w-66">政見</td>
@@ -15,12 +16,13 @@
     <tbody>
       <% @candidates.each do |candidate| %>
       <tr>
+        <td><%= link_to "投給這位", vote_candidate_path(candidate), data: { turbo_method: "post", confirm:"確定投給這個人?" } %></td>
         <td><%= candidate.name %>(年齡 <%= candidate.age %> 歲)</td>
         <td><%= candidate.party %></td>
         <td><%= candidate.politics %></td>
         <td><%= candidate.votes  %></td>
-        <td><%= link_to "編輯", edit_candidate_path(candidate.id) %></td>
-        <td><%= link_to "刪除", candidate_path(candidate.id), data: { turbo_method: "delete", turbo_confirm: "確認刪除"} %></td>
+        <td><%= link_to "編輯", edit_candidate_path(candidate) %></td>
+        <td><%= link_to "刪除", candidate_path(candidate), data: { turbo_method: "delete", turbo_confirm: "確認刪除"} %></td>
 
       </tr>
 

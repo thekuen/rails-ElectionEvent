@@ -1,5 +1,13 @@
 class CandidatesController < ApplicationController
-  before_action :find_candidate, only: [:show, :edit, :update, :destroy]
+  before_action :find_candidate, only: [ :show, :edit, :update, :destroy]
+
+  def vote
+    @candidate = Candidate.find_by(id: params[:id])
+    @candidate.increment(:votes)
+    @candidate.save
+    redirect_to candidates_path, notice: "完成投票!"
+  end
+
 
   def index
     @candidates = Candidate.all
@@ -40,7 +48,7 @@ class CandidatesController < ApplicationController
   def destroy
     @candidate = Candidate.find_by(id: params[:id ])
     @candidate.destroy if @candidate
-    redirect_to cadidates_path, notice: "資料已經刪除"
+    redirect_to candidates_path, notice: "資料已經刪除"
   end
 
 

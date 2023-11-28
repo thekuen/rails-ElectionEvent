@@ -5,13 +5,18 @@
 
   <%= render "form", f: f  %>
 
+  <div class=" gap-20 my-4">
+    <%= f.submit "編輯完成送出", class:"cursor-pointer" %>
+    <%= link_to '返回候選人列表', candidates_path %>
+  </div>
 
-  <%= f.submit "編輯完成送出", class:"cursor-pointer" %>
+
+
 
   <% end %>
 
 
-  <%= link_to '返回候選人列表', candidates_path %>
+
 
 </section>
 

@@ -7,11 +7,15 @@
 
   <%= render "form", f: f  %>
 
-  <%= f.submit "確定新增", class:"cursor-pointer"%>
+  <div class="flex gap-3 my-4">
+    <%= f.submit "確定新增", class:"cursor-pointer"%>
+    <%= link_to '返回候選人列表', candidates_path %>
+  </div>
+
 
   <% end %>
 
- <%= link_to '返回候選人列表', candidates_path %>
+
 </section>
 
 
